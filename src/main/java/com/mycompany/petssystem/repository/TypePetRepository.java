@@ -31,7 +31,7 @@ public class TypePetRepository {
     }
     
     public List<TypePet> getAllTypePets (){
-        final String SQL = "SELECT * FROM types_pet";
+        final String SQL = "SELECT * FROM types_pet WHERE type_pet_status = 1";
         
         List<TypePet> typePetList = new ArrayList<>();
                 
@@ -88,7 +88,7 @@ public class TypePetRepository {
     }
     
     public boolean updateTypePet (TypePet typePet){
-        final String SQL = "UPDATE types_pet SET type_description = ? WHERE type_id = ?";
+        final String SQL = "UPDATE types_pet SET type_description = ? WHERE type_id = ? AND type_pet_status = 1";
         
         try(Connection con = ConectionDB.getConection();
             PreparedStatement preStatement = con.prepareStatement(SQL)){

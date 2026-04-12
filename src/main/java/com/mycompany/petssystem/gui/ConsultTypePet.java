@@ -4,11 +4,18 @@
  */
 package com.mycompany.petssystem.gui;
 
+import com.mycompany.petssystem.entities.TypePet;
+import com.mycompany.petssystem.repository.TypePetRepository;
+import java.awt.HeadlessException;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author erick
  */
 public class ConsultTypePet extends javax.swing.JInternalFrame {
+    
+    private TypePetRepository typePetRepository = new TypePetRepository();
 
     /**
      * Creates new form SearchTypePet
@@ -26,21 +33,103 @@ public class ConsultTypePet extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabelConsultTypeID = new javax.swing.JLabel();
+        txtConsultTypeId = new javax.swing.JTextField();
+        jButtonConsultType = new javax.swing.JButton();
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        setClosable(true);
+
+        jLabelConsultTypeID.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        jLabelConsultTypeID.setText("ID");
+
+        txtConsultTypeId.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtConsultTypeId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtConsultTypeIdActionPerformed(evt);
+            }
+        });
+
+        jButtonConsultType.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        jButtonConsultType.setText("Buscar");
+        jButtonConsultType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConsultTypeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(180, 180, 180)
+                .addComponent(jLabelConsultTypeID)
+                .addGap(18, 18, 18)
+                .addComponent(txtConsultTypeId, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(170, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonConsultType)
+                .addGap(245, 245, 245))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(98, 98, 98)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelConsultTypeID)
+                    .addComponent(txtConsultTypeId, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                .addComponent(jButtonConsultType)
+                .addGap(74, 74, 74))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButtonConsultTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultTypeActionPerformed
+        // TODO add your handling code here:
+        try {
+            
+            int typeId = Integer.parseInt(txtConsultTypeId.getText());
+            
+            TypePet typePet = new TypePet();
+            
+            typePet.setTypeId(typeId);
+            
+            TypePet resultado = typePetRepository.getTypePet(typePet);
+            
+            if(resultado !=null){
+                JOptionPane.showMessageDialog(null, "Descripcion: "+resultado.getDescription()+"\nID: "+resultado.getTypeId());
+                txtConsultTypeId.setText("");
+            }else{
+                JOptionPane.showMessageDialog(null, "No se pudo consultar la mascota");
+            }
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "El ID debe se un numero entero");
+        }
+    }//GEN-LAST:event_jButtonConsultTypeActionPerformed
+
+    private void txtConsultTypeIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConsultTypeIdActionPerformed
+        // TODO add your handling code here:
+        
+        
+                
+    }//GEN-LAST:event_txtConsultTypeIdActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonConsultType;
+    private javax.swing.JLabel jLabelConsultTypeID;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField txtConsultTypeId;
     // End of variables declaration//GEN-END:variables
 }

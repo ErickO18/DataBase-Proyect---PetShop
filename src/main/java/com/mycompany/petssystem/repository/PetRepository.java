@@ -87,7 +87,7 @@ public class PetRepository {
     
     
     public boolean updatePet(Pet pet) {
-        final String SQL = "UPDATE pets SET pet_name = ?, pet_age = ?, type_id = ? WHERE pet_id = ?";
+        final String SQL = "UPDATE pets SET pet_name = ?, pet_age = ?, type_id = ? WHERE pet_id = ? AND pet_status = 1";
 
         try (Connection con = ConectionDB.getConection();
             PreparedStatement preStatement = con.prepareStatement(SQL)) {

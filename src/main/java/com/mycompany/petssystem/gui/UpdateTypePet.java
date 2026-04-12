@@ -4,11 +4,18 @@
  */
 package com.mycompany.petssystem.gui;
 
+import com.mycompany.petssystem.entities.TypePet;
+import com.mycompany.petssystem.repository.TypePetRepository;
+import java.awt.HeadlessException;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author erick
  */
 public class UpdateTypePet extends javax.swing.JInternalFrame {
+    
+    private TypePetRepository typePetRepository = new TypePetRepository();
 
     /**
      * Creates new form UpdateTypePet
@@ -26,21 +33,122 @@ public class UpdateTypePet extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabelUpdateTypeDesc = new javax.swing.JLabel();
+        txtUpdateTypeDesc = new javax.swing.JTextField();
+        jButtonUpdateType = new javax.swing.JButton();
+        jLabelIDUpdateType = new javax.swing.JLabel();
+        txtIdUpdateType = new javax.swing.JTextField();
+
+        setClosable(true);
+
+        jLabelUpdateTypeDesc.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        jLabelUpdateTypeDesc.setText("Nueva descripcion:");
+
+        txtUpdateTypeDesc.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtUpdateTypeDesc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUpdateTypeDescActionPerformed(evt);
+            }
+        });
+
+        jButtonUpdateType.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        jButtonUpdateType.setText("Actualizar");
+        jButtonUpdateType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonUpdateTypeActionPerformed(evt);
+            }
+        });
+
+        jLabelIDUpdateType.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        jLabelIDUpdateType.setText("ID");
+
+        txtIdUpdateType.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtIdUpdateType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdUpdateTypeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonUpdateType)
+                .addGap(192, 192, 192))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jLabelUpdateTypeDesc)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtUpdateTypeDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(183, 183, 183)
+                        .addComponent(jLabelIDUpdateType)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtIdUpdateType, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtIdUpdateType, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelIDUpdateType))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelUpdateTypeDesc)
+                    .addComponent(txtUpdateTypeDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addComponent(jButtonUpdateType)
+                .addGap(44, 44, 44))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtUpdateTypeDescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUpdateTypeDescActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUpdateTypeDescActionPerformed
+
+    private void jButtonUpdateTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUpdateTypeActionPerformed
+        try {
+            int id = Integer.parseInt(txtIdUpdateType.getText());
+            String description = txtUpdateTypeDesc.getText();
+            TypePet typePet = new TypePet(id,description,(byte) 1);
+            
+            boolean result = typePetRepository.updateTypePet(typePet);
+            
+            if(result){
+                JOptionPane.showMessageDialog(null, "Se actualizaron los datos del tipo de mascota");
+                txtIdUpdateType.setText("");
+                txtUpdateTypeDesc.setText("");
+            }else{
+                JOptionPane.showMessageDialog(null, "No se pudo actualizar el tipo de mascota");
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "El campo de ID deben ser numeros enteros");
+        }catch (HeadlessException e){
+
+            JOptionPane.showMessageDialog(null, "Error: "+e.getMessage());
+
+        }
+        
+    }//GEN-LAST:event_jButtonUpdateTypeActionPerformed
+
+    private void txtIdUpdateTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdUpdateTypeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdUpdateTypeActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonUpdateType;
+    private javax.swing.JLabel jLabelIDUpdateType;
+    private javax.swing.JLabel jLabelUpdateTypeDesc;
+    private javax.swing.JTextField txtIdUpdateType;
+    private javax.swing.JTextField txtUpdateTypeDesc;
     // End of variables declaration//GEN-END:variables
 }
