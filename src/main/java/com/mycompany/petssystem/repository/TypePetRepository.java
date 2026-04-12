@@ -59,6 +59,33 @@ public class TypePetRepository {
         return typePetList;
     }
     
+    
+    public TypePet getTypePet(TypePet typePet) {
+    final String SQL = "SELECT * FROM types_pet WHERE type_id = ? AND type_pet_status = 1";
+
+    try (Connection con = ConectionDB.getConection();
+         PreparedStatement preStatement = con.prepareStatement(SQL)) {
+
+        preStatement.setInt(1, typePet.getTypeId());
+
+        try (ResultSet result = preStatement.executeQuery()) {
+            if (result.next()) {
+                return new TypePet(
+                        result.getInt("type_id"),
+                        result.getString("type_description"),
+                        result.getByte("type_pet_status")
+
+                );
+            }
+        }
+
+    } catch (SQLException e) {
+        throw new RuntimeException("Error al consultar un tipo de mascota " + e.getMessage());
+    }
+
+    return null;
+    }
+    
     public boolean updateTypePet (TypePet typePet){
         final String SQL = "UPDATE types_pet SET type_description = ? WHERE type_id = ?";
         

@@ -57,6 +57,35 @@ public class PetRepository {
         return petList; 
     }
     
+    public Pet getPet(Pet pet) {
+    final String SQL = "SELECT * FROM pets WHERE pet_id = ? AND pet_status = 1";
+
+    try (Connection con = ConectionDB.getConection();
+         PreparedStatement preStatement = con.prepareStatement(SQL)) {
+
+        preStatement.setInt(1, pet.getId());
+
+        try (ResultSet result = preStatement.executeQuery()) {
+            if (result.next()) {
+                return new Pet(
+                        result.getInt("pet_id"),
+                        result.getString("pet_name"),
+                        result.getShort("pet_age"),
+                        result.getByte("pet_status"),
+                        result.getInt("type_id")
+                );
+            }
+        }
+
+    } catch (SQLException e) {
+        throw new RuntimeException("Error al consultar una mascota " + e.getMessage());
+    }
+
+    return null;
+    }
+    
+    
+    
     public boolean updatePet(Pet pet) {
         final String SQL = "UPDATE pets SET pet_name = ?, pet_age = ?, type_id = ? WHERE pet_id = ?";
 
