@@ -4,11 +4,17 @@
  */
 package com.mycompany.petssystem.gui;
 
+import com.mycompany.petssystem.entities.TypePet;
+import com.mycompany.petssystem.repository.TypePetRepository;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author erick
  */
 public class DeleteTypePet extends javax.swing.JInternalFrame {
+    
+    private TypePetRepository typePetRepository = new TypePetRepository();
 
     /**
      * Creates new form DeleteTypePet
@@ -26,21 +32,94 @@ public class DeleteTypePet extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabelDeleteTypeID = new javax.swing.JLabel();
+        txtDeleteTypeID = new javax.swing.JTextField();
+        jButtonDeleteType = new javax.swing.JButton();
+
+        setClosable(true);
+
+        jLabelDeleteTypeID.setFont(new java.awt.Font("Arial Black", 3, 24)); // NOI18N
+        jLabelDeleteTypeID.setText("ID");
+
+        txtDeleteTypeID.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtDeleteTypeID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDeleteTypeIDActionPerformed(evt);
+            }
+        });
+
+        jButtonDeleteType.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jButtonDeleteType.setText("Borrar");
+        jButtonDeleteType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDeleteTypeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(144, 144, 144)
+                .addComponent(jLabelDeleteTypeID, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonDeleteType)
+                    .addComponent(txtDeleteTypeID, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(126, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(102, 102, 102)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelDeleteTypeID)
+                    .addComponent(txtDeleteTypeID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addComponent(jButtonDeleteType)
+                .addGap(47, 47, 47))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtDeleteTypeIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDeleteTypeIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDeleteTypeIDActionPerformed
+
+    private void jButtonDeleteTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeleteTypeActionPerformed
+        try {
+            int id = Integer.parseInt(txtDeleteTypeID.getText());
+            int confirm = JOptionPane.showConfirmDialog(null, "¿Desea eliminar este tipo de mascota?");
+            
+            if(confirm == 0){
+                byte newStatus = 0;
+                
+                TypePet typePet = new TypePet();
+                
+                typePet.setTypeId(id);
+                typePet.setTypeStatus(newStatus);
+                boolean result = typePetRepository.deleteTypePet(typePet);
+                
+                if(result){
+                    JOptionPane.showMessageDialog(null, "El tipo de mascota fue borrado");
+                    txtDeleteTypeID.setText("");
+                }else{
+                    JOptionPane.showMessageDialog(null,"El tipo de mascota no se pudo borrar");
+                }
+                
+            }
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "El ID debe ser un numero entero");
+        }
+    }//GEN-LAST:event_jButtonDeleteTypeActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonDeleteType;
+    private javax.swing.JLabel jLabelDeleteTypeID;
+    private javax.swing.JTextField txtDeleteTypeID;
     // End of variables declaration//GEN-END:variables
 }

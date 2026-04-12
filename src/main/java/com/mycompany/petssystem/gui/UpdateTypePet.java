@@ -6,7 +6,6 @@ package com.mycompany.petssystem.gui;
 
 import com.mycompany.petssystem.entities.TypePet;
 import com.mycompany.petssystem.repository.TypePetRepository;
-import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
 
 /**
@@ -131,7 +130,7 @@ public class UpdateTypePet extends javax.swing.JInternalFrame {
             }
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "El campo de ID deben ser numeros enteros");
-        }catch (HeadlessException e){
+        }catch (Exception e){
 
             JOptionPane.showMessageDialog(null, "Error: "+e.getMessage());
 
