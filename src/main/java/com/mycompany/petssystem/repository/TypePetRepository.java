@@ -14,12 +14,13 @@ public class TypePetRepository {
     
     public boolean registerTypePet (TypePet typePet){
         
-        final String SQL_QUERY = "INSERT into types_pet"+"(type_description) VALUES(?)";
+        final String SQL_QUERY = "INSERT into types_pet"+"(type_description,type_pet_status) VALUES(?,?)";
         
         try (Connection con = ConectionDB.getConection()){
             
             PreparedStatement preStatement = con.prepareStatement(SQL_QUERY);
             preStatement.setString(1,typePet.getDescription());
+            preStatement.setByte(2,typePet.getTypeStatus());
             
             return preStatement.executeUpdate()>0;
             

@@ -37,6 +37,8 @@ public class RegisterTypePet extends javax.swing.JInternalFrame {
         txtTipoTypeR = new javax.swing.JTextField();
         jButtonTypeR = new javax.swing.JButton();
 
+        setClosable(true);
+
         jLabelTipoTypeR.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jLabelTipoTypeR.setText("Tipo de mascota(descripcion)");
 
@@ -93,9 +95,8 @@ public class RegisterTypePet extends javax.swing.JInternalFrame {
         try {
             String description = txtTipoTypeR.getText();
             
-            TypePet typePet = new TypePet();
+            TypePet typePet = new TypePet(description,(byte)1);
             
-            typePet.setDescription(description);
             
             boolean result = typePetRepository.registerTypePet(typePet);
             
