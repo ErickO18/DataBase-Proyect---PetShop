@@ -101,19 +101,21 @@ public class ConsultPet extends javax.swing.JInternalFrame {
             pet.setId(id);
             Pet resultado = petRepository.getPet(pet);
             
-            TypePet typePet = new TypePet();
-            typePet.setTypeId(resultado.getTypeId());
-            TypePet tipo = typePetRepository.getTypePet(typePet);
+           
 
             if (resultado != null) {
+                TypePet typePet = new TypePet();
+                typePet.setTypeId(resultado.getTypeId());
+                TypePet tipo = typePetRepository.getTypePet(typePet);
                 JOptionPane.showMessageDialog(null, "Nombre: " + resultado.getName() + "\n" +"Edad: " + resultado.getAge() + "\n" + "Tipo de mascota: " +tipo.getDescription() +"(" +
-                        resultado.getTypeId()+")"
-            );
+                    resultado.getTypeId()+")");
             } else {
-            JOptionPane.showMessageDialog(null, "No se encontró ninguna mascot");
+            JOptionPane.showMessageDialog(null, "No se encontró ninguna mascota");
             }
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "El ID debe ser un número");
+        } catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Error: "+ e.getMessage());
         }
     }//GEN-LAST:event_jButtonConsultPetActionPerformed
 

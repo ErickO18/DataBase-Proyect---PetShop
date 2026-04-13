@@ -20,6 +20,7 @@ public class Desktop extends javax.swing.JFrame {
     private DeletePet deletePet;
     private ConsultPet consultPet;
     private UpdatePet updatePet;
+    private TablePet tablePet;
     
     //typePet
     
@@ -55,6 +56,7 @@ public class Desktop extends javax.swing.JFrame {
         menuItemSeePets = new javax.swing.JMenuItem();
         menuItemUpdatePet = new javax.swing.JMenuItem();
         menuItemDeletePet = new javax.swing.JMenuItem();
+        menuItemVerTodo = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         menuItemRegisterTypePet = new javax.swing.JMenuItem();
         menuItemSeeTypePet = new javax.swing.JMenuItem();
@@ -109,6 +111,14 @@ public class Desktop extends javax.swing.JFrame {
             }
         });
         jMenu1.add(menuItemDeletePet);
+
+        menuItemVerTodo.setText("Ver todas las mascotas");
+        menuItemVerTodo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemVerTodoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(menuItemVerTodo);
 
         jMenuBar1.add(jMenu1);
 
@@ -237,6 +247,14 @@ public class Desktop extends javax.swing.JFrame {
         deleteTypePet.setVisible(true);
     }//GEN-LAST:event_menuItemDeleteTypePetActionPerformed
 
+    private void menuItemVerTodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemVerTodoActionPerformed
+        if(tablePet == null || tablePet.isClosed()){
+            tablePet = new TablePet();
+            desktopFirst.add(tablePet);
+        }
+        tablePet.setVisible(true);
+    }//GEN-LAST:event_menuItemVerTodoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -286,5 +304,6 @@ public class Desktop extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuItemSeeTypePet;
     private javax.swing.JMenuItem menuItemUpdatePet;
     private javax.swing.JMenuItem menuItemUpdateTypePet;
+    private javax.swing.JMenuItem menuItemVerTodo;
     // End of variables declaration//GEN-END:variables
 }
