@@ -5,8 +5,11 @@
 package com.mycompany.petssystem.gui;
 
 import com.mycompany.petssystem.entities.Pet;
+import com.mycompany.petssystem.entities.TypePet;
 import com.mycompany.petssystem.repository.PetRepository;
+import com.mycompany.petssystem.repository.TypePetRepository;
 import java.sql.SQLException;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -16,6 +19,7 @@ import javax.swing.JOptionPane;
 public class RegisterPet extends javax.swing.JInternalFrame {
     
     private final PetRepository petRepository = new PetRepository();
+    private final TypePetRepository typePetRepository = new TypePetRepository();
 
 
     /**
@@ -23,6 +27,7 @@ public class RegisterPet extends javax.swing.JInternalFrame {
      */
     public RegisterPet() {
         initComponents();
+        loadTypes();
     }
 
     /**
@@ -39,8 +44,8 @@ public class RegisterPet extends javax.swing.JInternalFrame {
         jLabelTypePetR = new javax.swing.JLabel();
         jTextFieldNombreR = new javax.swing.JTextField();
         jTextFieldEdadR = new javax.swing.JTextField();
-        jTextFieldTipoR = new javax.swing.JTextField();
         jButtonRegistrarPet = new javax.swing.JButton();
+        jComboBoxTypeR = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(60, 63, 64));
         setClosable(true);
@@ -67,6 +72,13 @@ public class RegisterPet extends javax.swing.JInternalFrame {
             }
         });
 
+        jComboBoxTypeR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxTypeR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxTypeRActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -87,12 +99,16 @@ public class RegisterPet extends javax.swing.JInternalFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(87, 87, 87)
                                 .addComponent(jLabelNombreR)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldNombreR, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldEdadR, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldTipoR, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(229, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextFieldNombreR, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldEdadR, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(jComboBoxTypeR, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(234, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,8 +123,8 @@ public class RegisterPet extends javax.swing.JInternalFrame {
                     .addComponent(jTextFieldEdadR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldTipoR, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelTypePetR, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE))
+                    .addComponent(jLabelTypePetR, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+                    .addComponent(jComboBoxTypeR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addComponent(jButtonRegistrarPet, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(135, 135, 135))
@@ -126,7 +142,9 @@ public class RegisterPet extends javax.swing.JInternalFrame {
         try {
             String name = jTextFieldNombreR.getText();
             short age = Short.parseShort(jTextFieldEdadR.getText());
-            int typeId = Integer.parseInt(jTextFieldTipoR.getText());
+            int index = jComboBoxTypeR.getSelectedIndex();
+            TypePet tipo = typePetRepository.getAllTypePets().get(index);
+            int typeId = tipo.getTypeId();
 
             Pet pet = new Pet(name, age, (byte) 1, typeId);
             boolean registPet = petRepository.registerPet(pet);
@@ -135,7 +153,7 @@ public class RegisterPet extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "Mascota registrada");
                 jTextFieldNombreR.setText("");
                 jTextFieldEdadR.setText("");
-                jTextFieldTipoR.setText("");
+                jComboBoxTypeR.setSelectedIndex(0);
             } else {
                 JOptionPane.showMessageDialog(null, "No se pudo registrar la mascota");
             }
@@ -146,14 +164,28 @@ public class RegisterPet extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jButtonRegistrarPetActionPerformed
 
+    private void jComboBoxTypeRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxTypeRActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxTypeRActionPerformed
+    private void loadTypes() {
+        jComboBoxTypeR.removeAllItems();
+        try {
+            List<TypePet> types = typePetRepository.getAllTypePets();
+            for (TypePet t : types) {
+                jComboBoxTypeR.addItem(t.getDescription());
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
+        }
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonRegistrarPet;
+    private javax.swing.JComboBox<String> jComboBoxTypeR;
     private javax.swing.JLabel jLabelEdadR;
     private javax.swing.JLabel jLabelNombreR;
     private javax.swing.JLabel jLabelTypePetR;
     private javax.swing.JTextField jTextFieldEdadR;
     private javax.swing.JTextField jTextFieldNombreR;
-    private javax.swing.JTextField jTextFieldTipoR;
     // End of variables declaration//GEN-END:variables
 }

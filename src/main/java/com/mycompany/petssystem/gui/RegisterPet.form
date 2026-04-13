@@ -46,15 +46,22 @@
                               <Component id="jLabelNombreR" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jTextFieldNombreR" min="-2" pref="202" max="-2" attributes="0"/>
-                          <Component id="jTextFieldEdadR" min="-2" pref="202" max="-2" attributes="0"/>
-                          <Component id="jTextFieldTipoR" min="-2" pref="207" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jTextFieldNombreR" min="-2" pref="202" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldEdadR" min="-2" pref="202" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                              <Component id="jComboBoxTypeR" min="-2" pref="193" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="229" max="32767" attributes="0"/>
+              <EmptySpace pref="234" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -73,8 +80,8 @@
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jTextFieldTipoR" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="jLabelTypePetR" alignment="3" pref="103" max="32767" attributes="0"/>
+                  <Component id="jComboBoxTypeR" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
               <Component id="jButtonRegistrarPet" min="-2" pref="72" max="-2" attributes="0"/>
@@ -115,8 +122,6 @@
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldEdadR">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldTipoR">
-    </Component>
     <Component class="javax.swing.JButton" name="jButtonRegistrarPet">
       <Properties>
         <Property name="text" type="java.lang.String" value="Registrar"/>
@@ -124,6 +129,24 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonRegistrarPetActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jComboBoxTypeR">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="4">
+            <StringItem index="0" value="Item 1"/>
+            <StringItem index="1" value="Item 2"/>
+            <StringItem index="2" value="Item 3"/>
+            <StringItem index="3" value="Item 4"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxTypeRActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

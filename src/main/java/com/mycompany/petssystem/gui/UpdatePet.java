@@ -5,7 +5,10 @@
 package com.mycompany.petssystem.gui;
 
 import com.mycompany.petssystem.entities.Pet;
+import com.mycompany.petssystem.entities.TypePet;
 import com.mycompany.petssystem.repository.PetRepository;
+import com.mycompany.petssystem.repository.TypePetRepository;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,12 +18,14 @@ import javax.swing.JOptionPane;
 public class UpdatePet extends javax.swing.JInternalFrame {
     
     private final PetRepository petRepository = new PetRepository();
+    private final TypePetRepository typePetRepository = new TypePetRepository();
 
     /**
      * Creates new form UpdatePet
      */
     public UpdatePet() {
         initComponents();
+        loadTypes();
     }
 
     /**
@@ -37,10 +42,10 @@ public class UpdatePet extends javax.swing.JInternalFrame {
         jLabelUpdateTyPet = new javax.swing.JLabel();
         txtNewNamePet = new javax.swing.JTextField();
         txtNewAgePet = new javax.swing.JTextField();
-        txtNewTyPet = new javax.swing.JTextField();
         jButtonUpdatePet = new javax.swing.JButton();
         txtUpdateID = new javax.swing.JTextField();
         jLabelUpdateId = new javax.swing.JLabel();
+        jComboBoxUpdateType = new javax.swing.JComboBox<>();
 
         setClosable(true);
 
@@ -67,13 +72,6 @@ public class UpdatePet extends javax.swing.JInternalFrame {
             }
         });
 
-        txtNewTyPet.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtNewTyPet.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNewTyPetActionPerformed(evt);
-            }
-        });
-
         jButtonUpdatePet.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jButtonUpdatePet.setText("Actualizar Datos");
         jButtonUpdatePet.addActionListener(new java.awt.event.ActionListener() {
@@ -91,6 +89,13 @@ public class UpdatePet extends javax.swing.JInternalFrame {
 
         jLabelUpdateId.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
         jLabelUpdateId.setText("ID");
+
+        jComboBoxUpdateType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxUpdateType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxUpdateTypeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -112,11 +117,10 @@ public class UpdatePet extends javax.swing.JInternalFrame {
                                 .addGap(121, 121, 121)
                                 .addComponent(jLabelUpdateTyPet)))
                         .addGap(33, 33, 33)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNewTyPet, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtNewAgePet, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
-                                .addComponent(txtNewNamePet)))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtNewAgePet, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
+                            .addComponent(txtNewNamePet)
+                            .addComponent(jComboBoxUpdateType, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(245, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
@@ -143,10 +147,10 @@ public class UpdatePet extends javax.swing.JInternalFrame {
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelUpdateTyPet)
-                    .addComponent(txtNewTyPet, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
+                    .addComponent(jComboBoxUpdateType, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
                 .addComponent(jButtonUpdatePet, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(109, Short.MAX_VALUE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
 
         pack();
@@ -160,17 +164,15 @@ public class UpdatePet extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNewAgePetActionPerformed
 
-    private void txtNewTyPetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNewTyPetActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNewTyPetActionPerformed
-
     private void jButtonUpdatePetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUpdatePetActionPerformed
         
         try {
             int id = Integer.parseInt(txtUpdateID.getText());
             String name = txtNewNamePet.getText();
             short age = Short.parseShort(txtNewAgePet.getText());
-            int typeId = Integer.parseInt(txtNewTyPet.getText());
+            int index = jComboBoxUpdateType.getSelectedIndex();
+            TypePet tipo = typePetRepository.getAllTypePets().get(index);
+            int typeId = tipo.getTypeId();
 
             Pet pet = new Pet(id, name, age, (byte) 1, typeId);
             boolean updatePet = petRepository.updatePet(pet);
@@ -180,7 +182,7 @@ public class UpdatePet extends javax.swing.JInternalFrame {
                 txtUpdateID.setText("");
                 txtNewNamePet.setText("");
                 txtNewAgePet.setText("");
-                txtNewTyPet.setText("");
+                jComboBoxUpdateType.setSelectedIndex(0);
             } else {
                 JOptionPane.showMessageDialog(null, "No se pudo actualizar.");
             }
@@ -193,16 +195,32 @@ public class UpdatePet extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUpdateIDActionPerformed
 
+    private void jComboBoxUpdateTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxUpdateTypeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxUpdateTypeActionPerformed
+    private void loadTypes(){
+        jComboBoxUpdateType.removeAllItems();
+        try {
+            List<TypePet> types = typePetRepository.getAllTypePets();
+            
+            for (TypePet t:types){
+                jComboBoxUpdateType.addItem(t.getDescription());
+                
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Error: " + e.getMessage());
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonUpdatePet;
+    private javax.swing.JComboBox<String> jComboBoxUpdateType;
     private javax.swing.JLabel jLabelUpdateAgePet;
     private javax.swing.JLabel jLabelUpdateId;
     private javax.swing.JLabel jLabelUpdateNamePet;
     private javax.swing.JLabel jLabelUpdateTyPet;
     private javax.swing.JTextField txtNewAgePet;
     private javax.swing.JTextField txtNewNamePet;
-    private javax.swing.JTextField txtNewTyPet;
     private javax.swing.JTextField txtUpdateID;
     // End of variables declaration//GEN-END:variables
 }
