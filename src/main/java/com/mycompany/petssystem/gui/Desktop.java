@@ -28,6 +28,7 @@ public class Desktop extends javax.swing.JFrame {
     private DeleteTypePet deleteTypePet;
     private ConsultTypePet consultTypePet;
     private UpdateTypePet updateTypePet;
+    private TableTypePet tableTypePet;
     
     private final PetRepository petRepository = new PetRepository();
     private final TypePetRepository typePetRepository = new TypePetRepository();
@@ -62,6 +63,7 @@ public class Desktop extends javax.swing.JFrame {
         menuItemSeeTypePet = new javax.swing.JMenuItem();
         menuItemUpdateTypePet = new javax.swing.JMenuItem();
         menuItemDeleteTypePet = new javax.swing.JMenuItem();
+        jMenuItemVerTodoType = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -124,7 +126,7 @@ public class Desktop extends javax.swing.JFrame {
 
         jMenu2.setText("Type Pet");
 
-        menuItemRegisterTypePet.setText("Registrar ");
+        menuItemRegisterTypePet.setText("Registrar Tipo de mascota ");
         menuItemRegisterTypePet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuItemRegisterTypePetActionPerformed(evt);
@@ -132,7 +134,7 @@ public class Desktop extends javax.swing.JFrame {
         });
         jMenu2.add(menuItemRegisterTypePet);
 
-        menuItemSeeTypePet.setText("Buscar");
+        menuItemSeeTypePet.setText("Buscar Tipo de mascota");
         menuItemSeeTypePet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuItemSeeTypePetActionPerformed(evt);
@@ -140,7 +142,7 @@ public class Desktop extends javax.swing.JFrame {
         });
         jMenu2.add(menuItemSeeTypePet);
 
-        menuItemUpdateTypePet.setText("Actualizar");
+        menuItemUpdateTypePet.setText("Actualizar tipo de mascota");
         menuItemUpdateTypePet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuItemUpdateTypePetActionPerformed(evt);
@@ -148,13 +150,21 @@ public class Desktop extends javax.swing.JFrame {
         });
         jMenu2.add(menuItemUpdateTypePet);
 
-        menuItemDeleteTypePet.setText("Eliminar");
+        menuItemDeleteTypePet.setText("Eliminar Tipo de mascota");
         menuItemDeleteTypePet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuItemDeleteTypePetActionPerformed(evt);
             }
         });
         jMenu2.add(menuItemDeleteTypePet);
+
+        jMenuItemVerTodoType.setText("Ver todos los tipos de mascota");
+        jMenuItemVerTodoType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemVerTodoTypeActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItemVerTodoType);
 
         jMenuBar1.add(jMenu2);
 
@@ -255,6 +265,14 @@ public class Desktop extends javax.swing.JFrame {
         tablePet.setVisible(true);
     }//GEN-LAST:event_menuItemVerTodoActionPerformed
 
+    private void jMenuItemVerTodoTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemVerTodoTypeActionPerformed
+        if(tableTypePet == null || tableTypePet.isClosed()){
+            tableTypePet = new TableTypePet();
+            desktopFirst.add(tableTypePet);
+        }
+        tableTypePet.setVisible(true);
+    }//GEN-LAST:event_jMenuItemVerTodoTypeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -296,6 +314,7 @@ public class Desktop extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItemVerTodoType;
     private javax.swing.JMenuItem menuItemDeletePet;
     private javax.swing.JMenuItem menuItemDeleteTypePet;
     private javax.swing.JMenuItem menuItemRegisterTypePet;

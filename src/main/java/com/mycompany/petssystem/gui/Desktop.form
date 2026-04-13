@@ -63,7 +63,7 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="menuItemRegisterTypePet">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Registrar "/>
+                <Property name="text" type="java.lang.String" value="Registrar Tipo de mascota "/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuItemRegisterTypePetActionPerformed"/>
@@ -71,7 +71,7 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menuItemSeeTypePet">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Buscar"/>
+                <Property name="text" type="java.lang.String" value="Buscar Tipo de mascota"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuItemSeeTypePetActionPerformed"/>
@@ -79,7 +79,7 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menuItemUpdateTypePet">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Actualizar"/>
+                <Property name="text" type="java.lang.String" value="Actualizar tipo de mascota"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuItemUpdateTypePetActionPerformed"/>
@@ -87,10 +87,18 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menuItemDeleteTypePet">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Eliminar"/>
+                <Property name="text" type="java.lang.String" value="Eliminar Tipo de mascota"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuItemDeleteTypePetActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemVerTodoType">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ver todos los tipos de mascota"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemVerTodoTypeActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
