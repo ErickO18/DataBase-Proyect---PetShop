@@ -35,20 +35,21 @@ public class DeletePet extends javax.swing.JInternalFrame {
         jLabelDeleteIDPet = new javax.swing.JLabel();
         txtDeleteIDPet = new javax.swing.JTextField();
         jButtonDeletePet = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setClosable(true);
 
-        jLabelDeleteIDPet.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
+        jLabelDeleteIDPet.setFont(new java.awt.Font("Georgia", 3, 36)); // NOI18N
         jLabelDeleteIDPet.setText("ID");
 
-        txtDeleteIDPet.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtDeleteIDPet.setFont(new java.awt.Font("Berlin Sans FB Demi", 2, 18)); // NOI18N
         txtDeleteIDPet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDeleteIDPetActionPerformed(evt);
             }
         });
 
-        jButtonDeletePet.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
+        jButtonDeletePet.setFont(new java.awt.Font("Arial Black", 3, 24)); // NOI18N
         jButtonDeletePet.setText("Borrar Mascota");
         jButtonDeletePet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,31 +57,36 @@ public class DeletePet extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Georgia", 3, 24)); // NOI18N
+        jLabel1.setText("Eliminar Mascota");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(174, 174, 174)
-                .addComponent(jLabelDeleteIDPet)
-                .addGap(35, 35, 35)
-                .addComponent(txtDeleteIDPet, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(143, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonDeletePet)
-                .addGap(96, 96, 96))
+                .addGap(161, 161, 161)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(jButtonDeletePet, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabelDeleteIDPet)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtDeleteIDPet, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(169, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(28, 28, 28)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelDeleteIDPet)
-                    .addComponent(txtDeleteIDPet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(54, 54, 54)
-                .addComponent(jButtonDeletePet)
-                .addContainerGap(117, Short.MAX_VALUE))
+                    .addComponent(txtDeleteIDPet, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(60, 60, 60)
+                .addComponent(jButtonDeletePet, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(82, 82, 82))
         );
 
         pack();
@@ -123,6 +129,7 @@ public class DeletePet extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonDeletePet;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelDeleteIDPet;
     private javax.swing.JTextField txtDeleteIDPet;
     // End of variables declaration//GEN-END:variables

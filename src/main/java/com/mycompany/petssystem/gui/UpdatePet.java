@@ -49,46 +49,46 @@ public class UpdatePet extends javax.swing.JInternalFrame {
 
         setClosable(true);
 
-        jLabelUpdateNamePet.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jLabelUpdateNamePet.setText("Nuevo nombre");
+        jLabelUpdateNamePet.setFont(new java.awt.Font("Georgia", 3, 24)); // NOI18N
+        jLabelUpdateNamePet.setText("Nuevo nombre:");
 
-        jLabelUpdateAgePet.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jLabelUpdateAgePet.setText("Nueva Edad");
+        jLabelUpdateAgePet.setFont(new java.awt.Font("Georgia", 3, 24)); // NOI18N
+        jLabelUpdateAgePet.setText("Nueva Edad:");
 
-        jLabelUpdateTyPet.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jLabelUpdateTyPet.setText("Nuevo tipo de mascota");
+        jLabelUpdateTyPet.setFont(new java.awt.Font("Georgia", 3, 24)); // NOI18N
+        jLabelUpdateTyPet.setText("Nuevo tipo de mascota:");
 
-        txtNewNamePet.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtNewNamePet.setFont(new java.awt.Font("Berlin Sans FB Demi", 2, 18)); // NOI18N
         txtNewNamePet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNewNamePetActionPerformed(evt);
             }
         });
 
-        txtNewAgePet.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtNewAgePet.setFont(new java.awt.Font("Berlin Sans FB Demi", 2, 18)); // NOI18N
         txtNewAgePet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNewAgePetActionPerformed(evt);
             }
         });
 
-        jButtonUpdatePet.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jButtonUpdatePet.setText("Actualizar Datos");
+        jButtonUpdatePet.setFont(new java.awt.Font("Arial Black", 3, 18)); // NOI18N
+        jButtonUpdatePet.setText("Actualizar Mascota");
         jButtonUpdatePet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonUpdatePetActionPerformed(evt);
             }
         });
 
-        txtUpdateID.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtUpdateID.setFont(new java.awt.Font("Berlin Sans FB Demi", 2, 18)); // NOI18N
         txtUpdateID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUpdateIDActionPerformed(evt);
             }
         });
 
-        jLabelUpdateId.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        jLabelUpdateId.setText("ID");
+        jLabelUpdateId.setFont(new java.awt.Font("Georgia", 3, 24)); // NOI18N
+        jLabelUpdateId.setText("ID:");
 
         jComboBoxUpdateType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxUpdateType.addActionListener(new java.awt.event.ActionListener() {
@@ -103,54 +103,57 @@ public class UpdatePet extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(jLabelUpdateAgePet)
+                                    .addGap(85, 85, 85))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(jLabelUpdateNamePet)
+                                    .addGap(75, 75, 75)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtNewAgePet, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtNewNamePet, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(50, 50, 50)
+                            .addComponent(jLabelUpdateTyPet, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jComboBoxUpdateType, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(98, 98, 98)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabelUpdateNamePet)
-                                            .addComponent(jLabelUpdateAgePet)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addContainerGap()
-                                        .addComponent(jLabelUpdateTyPet)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabelUpdateId, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(22, 22, 22)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNewAgePet, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNewNamePet, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBoxUpdateType, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtUpdateID, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(200, 200, 200)
-                        .addComponent(jButtonUpdatePet, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(150, Short.MAX_VALUE))
+                        .addGap(174, 174, 174)
+                        .addComponent(jLabelUpdateId, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(52, 52, 52)
+                        .addComponent(txtUpdateID, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(42, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButtonUpdatePet, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(168, 168, 168))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(34, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtUpdateID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelUpdateId, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabelUpdateId, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtUpdateID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(51, 51, 51)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelUpdateNamePet)
                     .addComponent(txtNewNamePet, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelUpdateAgePet)
                     .addComponent(txtNewAgePet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBoxUpdateType, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelUpdateTyPet))
-                .addGap(28, 28, 28)
+                    .addComponent(jLabelUpdateTyPet)
+                    .addComponent(jComboBoxUpdateType, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
                 .addComponent(jButtonUpdatePet, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43))
+                .addGap(42, 42, 42))
         );
 
         pack();

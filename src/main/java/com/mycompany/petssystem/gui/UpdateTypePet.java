@@ -40,28 +40,28 @@ public class UpdateTypePet extends javax.swing.JInternalFrame {
 
         setClosable(true);
 
-        jLabelUpdateTypeDesc.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        jLabelUpdateTypeDesc.setFont(new java.awt.Font("Georgia", 3, 24)); // NOI18N
         jLabelUpdateTypeDesc.setText("Nueva descripcion:");
 
-        txtUpdateTypeDesc.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtUpdateTypeDesc.setFont(new java.awt.Font("Berlin Sans FB Demi", 2, 18)); // NOI18N
         txtUpdateTypeDesc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUpdateTypeDescActionPerformed(evt);
             }
         });
 
-        jButtonUpdateType.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jButtonUpdateType.setText("Actualizar");
+        jButtonUpdateType.setFont(new java.awt.Font("Arial Black", 3, 18)); // NOI18N
+        jButtonUpdateType.setText("Actualizar Tipo de Mascota");
         jButtonUpdateType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonUpdateTypeActionPerformed(evt);
             }
         });
 
-        jLabelIDUpdateType.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        jLabelIDUpdateType.setFont(new java.awt.Font("Georgia", 3, 24)); // NOI18N
         jLabelIDUpdateType.setText("ID");
 
-        txtIdUpdateType.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtIdUpdateType.setFont(new java.awt.Font("Berlin Sans FB Demi", 2, 18)); // NOI18N
         txtIdUpdateType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIdUpdateTypeActionPerformed(evt);
@@ -72,10 +72,6 @@ public class UpdateTypePet extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonUpdateType)
-                .addGap(192, 192, 192))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -87,8 +83,11 @@ public class UpdateTypePet extends javax.swing.JInternalFrame {
                         .addGap(183, 183, 183)
                         .addComponent(jLabelIDUpdateType)
                         .addGap(18, 18, 18)
-                        .addComponent(txtIdUpdateType, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(35, Short.MAX_VALUE))
+                        .addComponent(txtIdUpdateType, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(106, 106, 106)
+                        .addComponent(jButtonUpdateType)))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,12 +97,12 @@ public class UpdateTypePet extends javax.swing.JInternalFrame {
                     .addComponent(txtIdUpdateType, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelIDUpdateType))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelUpdateTypeDesc)
-                    .addComponent(txtUpdateTypeDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtUpdateTypeDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelUpdateTypeDesc))
+                .addGap(36, 36, 36)
                 .addComponent(jButtonUpdateType)
-                .addGap(44, 44, 44))
+                .addGap(48, 48, 48))
         );
 
         pack();

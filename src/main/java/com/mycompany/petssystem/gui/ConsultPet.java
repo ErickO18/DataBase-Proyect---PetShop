@@ -38,26 +38,30 @@ public class ConsultPet extends javax.swing.JInternalFrame {
         labelIDPet = new javax.swing.JLabel();
         txtConsultPet = new javax.swing.JTextField();
         jButtonConsultPet = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setClosable(true);
 
-        labelIDPet.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
+        labelIDPet.setFont(new java.awt.Font("Georgia", 3, 36)); // NOI18N
         labelIDPet.setText("ID");
 
-        txtConsultPet.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtConsultPet.setFont(new java.awt.Font("Berlin Sans FB Demi", 2, 18)); // NOI18N
         txtConsultPet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtConsultPetActionPerformed(evt);
             }
         });
 
-        jButtonConsultPet.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        jButtonConsultPet.setFont(new java.awt.Font("Arial Black", 3, 18)); // NOI18N
         jButtonConsultPet.setText("Buscar");
         jButtonConsultPet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonConsultPetActionPerformed(evt);
             }
         });
+
+        jLabel1.setFont(new java.awt.Font("Georgia", 3, 24)); // NOI18N
+        jLabel1.setText("Buscar mascota");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -66,25 +70,31 @@ public class ConsultPet extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(146, 146, 146)
-                        .addComponent(labelIDPet, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(168, 168, 168)
+                        .addComponent(labelIDPet, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtConsultPet, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(251, 251, 251)
-                        .addComponent(jButtonConsultPet)))
-                .addContainerGap(173, Short.MAX_VALUE))
+                        .addComponent(jButtonConsultPet, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(147, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(184, 184, 184))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(96, 96, 96)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtConsultPet, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelIDPet, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(67, 67, 67)
-                .addComponent(jButtonConsultPet)
-                .addContainerGap(95, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addComponent(jLabel1)
+                .addGap(52, 52, 52)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelIDPet, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtConsultPet, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(66, 66, 66)
+                .addComponent(jButtonConsultPet, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         pack();
@@ -122,6 +132,7 @@ public class ConsultPet extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonConsultPet;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel labelIDPet;
     private javax.swing.JTextField txtConsultPet;
     // End of variables declaration//GEN-END:variables

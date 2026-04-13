@@ -38,6 +38,7 @@ public class Desktop extends javax.swing.JFrame {
      */
     public Desktop() {
         initComponents();
+        
     }
 
     /**
@@ -68,19 +69,25 @@ public class Desktop extends javax.swing.JFrame {
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 0, 102));
+
+        desktopFirst.setBorder(javax.swing.BorderFactory.createEmptyBorder(100, 100, 100, 100));
 
         javax.swing.GroupLayout desktopFirstLayout = new javax.swing.GroupLayout(desktopFirst);
         desktopFirst.setLayout(desktopFirstLayout);
         desktopFirstLayout.setHorizontalGroup(
             desktopFirstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 817, Short.MAX_VALUE)
+            .addGap(0, 694, Short.MAX_VALUE)
         );
         desktopFirstLayout.setVerticalGroup(
             desktopFirstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 433, Short.MAX_VALUE)
+            .addGap(0, 293, Short.MAX_VALUE)
         );
 
+        getContentPane().add(desktopFirst, java.awt.BorderLayout.CENTER);
+
         jMenu1.setText("Pet");
+        jMenu1.setFont(new java.awt.Font("Georgia", 2, 14)); // NOI18N
 
         menuItemRegistrarPet.setText("Registrar Mascota");
         menuItemRegistrarPet.addActionListener(new java.awt.event.ActionListener() {
@@ -125,6 +132,7 @@ public class Desktop extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Type Pet");
+        jMenu2.setFont(new java.awt.Font("Georgia", 2, 14)); // NOI18N
 
         menuItemRegisterTypePet.setText("Registrar Tipo de mascota ");
         menuItemRegisterTypePet.addActionListener(new java.awt.event.ActionListener() {
@@ -169,23 +177,6 @@ public class Desktop extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(desktopFirst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(39, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(desktopFirst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
-        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

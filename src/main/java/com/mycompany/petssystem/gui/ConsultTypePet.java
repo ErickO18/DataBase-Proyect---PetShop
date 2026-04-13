@@ -38,6 +38,7 @@ public class ConsultTypePet extends javax.swing.JInternalFrame {
         jLabelConsultTypeID = new javax.swing.JLabel();
         txtConsultTypeId = new javax.swing.JTextField();
         jButtonConsultType = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -45,23 +46,26 @@ public class ConsultTypePet extends javax.swing.JInternalFrame {
 
         setClosable(true);
 
-        jLabelConsultTypeID.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        jLabelConsultTypeID.setFont(new java.awt.Font("Georgia", 3, 36)); // NOI18N
         jLabelConsultTypeID.setText("ID");
 
-        txtConsultTypeId.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtConsultTypeId.setFont(new java.awt.Font("Berlin Sans FB Demi", 2, 18)); // NOI18N
         txtConsultTypeId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtConsultTypeIdActionPerformed(evt);
             }
         });
 
-        jButtonConsultType.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        jButtonConsultType.setFont(new java.awt.Font("Arial Black", 3, 18)); // NOI18N
         jButtonConsultType.setText("Buscar");
         jButtonConsultType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonConsultTypeActionPerformed(evt);
             }
         });
+
+        jLabel1.setFont(new java.awt.Font("Georgia", 3, 24)); // NOI18N
+        jLabel1.setText("Buscar tipo de mascota");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -71,23 +75,27 @@ public class ConsultTypePet extends javax.swing.JInternalFrame {
                 .addGap(180, 180, 180)
                 .addComponent(jLabelConsultTypeID)
                 .addGap(18, 18, 18)
-                .addComponent(txtConsultTypeId, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(170, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonConsultType, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtConsultTypeId, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(152, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonConsultType)
-                .addGap(245, 245, 245))
+                .addComponent(jLabel1)
+                .addGap(124, 124, 124))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(98, 98, 98)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelConsultTypeID)
-                    .addComponent(txtConsultTypeId, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
-                .addComponent(jButtonConsultType)
-                .addGap(74, 74, 74))
+                .addGap(21, 21, 21)
+                .addComponent(jLabel1)
+                .addGap(69, 69, 69)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabelConsultTypeID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtConsultTypeId))
+                .addGap(53, 53, 53)
+                .addComponent(jButtonConsultType, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         pack();
@@ -127,6 +135,7 @@ public class ConsultTypePet extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonConsultType;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelConsultTypeID;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;

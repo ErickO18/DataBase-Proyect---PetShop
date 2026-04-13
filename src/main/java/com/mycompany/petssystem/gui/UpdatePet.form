@@ -24,71 +24,73 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabelUpdateNamePet" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabelUpdateAgePet" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabelUpdateTyPet" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jLabelUpdateAgePet" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jLabelUpdateNamePet" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabelUpdateId" min="-2" pref="39" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="txtNewAgePet" alignment="1" min="-2" pref="199" max="-2" attributes="0"/>
+                              <Component id="txtNewNamePet" alignment="1" min="-2" pref="199" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtNewAgePet" min="-2" pref="199" max="-2" attributes="0"/>
-                          <Component id="txtNewNamePet" min="-2" pref="199" max="-2" attributes="0"/>
-                          <Component id="jComboBoxUpdateType" alignment="0" min="-2" pref="199" max="-2" attributes="0"/>
-                          <Component id="txtUpdateID" alignment="0" min="-2" pref="185" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="jLabelUpdateTyPet" min="-2" pref="301" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jComboBoxUpdateType" min="-2" pref="199" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="200" max="-2" attributes="0"/>
-                      <Component id="jButtonUpdatePet" min="-2" pref="228" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="174" max="-2" attributes="0"/>
+                      <Component id="jLabelUpdateId" min="-2" pref="53" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                      <Component id="txtUpdateID" min="-2" pref="185" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="150" max="32767" attributes="0"/>
+              <EmptySpace pref="42" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <Component id="jButtonUpdatePet" min="-2" pref="250" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace pref="34" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtUpdateID" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabelUpdateId" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="txtUpdateID" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabelUpdateNamePet" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtNewNamePet" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabelUpdateAgePet" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtNewAgePet" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jComboBoxUpdateType" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="jLabelUpdateTyPet" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jComboBoxUpdateType" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Component id="jButtonUpdatePet" min="-2" pref="54" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -97,31 +99,31 @@
     <Component class="javax.swing.JLabel" name="jLabelUpdateNamePet">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial Black" size="18" style="0"/>
+          <Font name="Georgia" size="24" style="3"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Nuevo nombre"/>
+        <Property name="text" type="java.lang.String" value="Nuevo nombre:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelUpdateAgePet">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial Black" size="18" style="0"/>
+          <Font name="Georgia" size="24" style="3"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Nueva Edad"/>
+        <Property name="text" type="java.lang.String" value="Nueva Edad:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelUpdateTyPet">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial Black" size="18" style="0"/>
+          <Font name="Georgia" size="24" style="3"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Nuevo tipo de mascota"/>
+        <Property name="text" type="java.lang.String" value="Nuevo tipo de mascota:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtNewNamePet">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="0"/>
+          <Font name="Berlin Sans FB Demi" size="18" style="2"/>
         </Property>
       </Properties>
       <Events>
@@ -131,7 +133,7 @@
     <Component class="javax.swing.JTextField" name="txtNewAgePet">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="0"/>
+          <Font name="Berlin Sans FB Demi" size="18" style="2"/>
         </Property>
       </Properties>
       <Events>
@@ -141,9 +143,9 @@
     <Component class="javax.swing.JButton" name="jButtonUpdatePet">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial Black" size="18" style="0"/>
+          <Font name="Arial Black" size="18" style="3"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Actualizar Datos"/>
+        <Property name="text" type="java.lang.String" value="Actualizar Mascota"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonUpdatePetActionPerformed"/>
@@ -152,7 +154,7 @@
     <Component class="javax.swing.JTextField" name="txtUpdateID">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="18" style="0"/>
+          <Font name="Berlin Sans FB Demi" size="18" style="2"/>
         </Property>
       </Properties>
       <Events>
@@ -162,9 +164,9 @@
     <Component class="javax.swing.JLabel" name="jLabelUpdateId">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial Black" size="24" style="0"/>
+          <Font name="Georgia" size="24" style="3"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="ID"/>
+        <Property name="text" type="java.lang.String" value="ID:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="jComboBoxUpdateType">
